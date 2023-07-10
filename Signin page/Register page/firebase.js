@@ -1,6 +1,6 @@
       // Import the functions you need from the SDKs you need
       import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
-      import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js";
+      import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js";
       // TODO: Add SDKs for Firebase products that you want to use
       // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -47,20 +47,42 @@ alert("Start")
 // signinbtn.addEventListener('click',signin_user, function(event){
 //     event.preventDefault()});
 
-signInWithEmailAndPassword(auth, "a@b.com", "qwe9rty")
-        .then((userCredential) => {
-            // Signed in 
-            alert("auth1")
-            const user = userCredential.user;
-            alert("auth2")
-            alert(user.email)
-        })
-        .catch((error) => {
-            const errorCode = error.code;
-            const errorMessage = error.message;
-            alert(errorMessage)
-            alert(errorCode)
-        });
+// SignIn code
+// signInWithEmailAndPassword(auth, "a@b.com", "qwerty")
+//         .then((userCredential) => {
+//             // Signed in 
+//             alert("auth1")
+//             const user = userCredential.user;
+//             alert("auth2")
+//             alert(user.email)
+//         })
+//         .catch((error) => {
+//             const errorCode = error.code;
+//             const errorMessage = error.message;
+//             alert(errorMessage)
+//             alert(errorCode)
+//         });
 
 
-alert("Finish")
+// SignUp code
+
+
+// createUserWithEmailAndPassword(auth, "cl@d.com", "asdfgh")
+//   .then((userCredential) => {
+//     // Signed in 
+//             alert("auth1")
+//     const user = userCredential.user;
+//             alert("auth2")
+//             alert(user.email)
+//     // ...
+//   })
+//   .catch((error) => {
+//     const errorCode = error.code;
+//     const errorMessage = error.message;
+//             alert(errorMessage)
+//             alert(errorCode)
+//     // ..
+//   });
+
+
+// alert("Finish")
