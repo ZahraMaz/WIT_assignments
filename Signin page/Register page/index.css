@@ -1,7 +1,10 @@
  html,body {
     width:100%;
     height:100%;
+    margin: 0;
     background: -webkit-linear-gradient(25deg, #FFBE0B,#FB5607,#FF006E,#8338EC,#3A86FF);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     display: flex;
     align-content: center;
     align-items: center;
@@ -27,14 +30,15 @@ label {
   }
 #form-container{
     margin:0 auto;
-    width: 30%;
-    height: 50%;
+    /* width: 30%; */
+    /* height: 50%; */
     
 
 }
 #Login-form{
     width: 100%;
-    height: 100%;
+    /* height: 100%; */
+    Overflow:scroll;
     background-color: transparent;
     box-shadow: 0 0 50px #000;
     border-radius: 2%;
@@ -49,9 +53,9 @@ label {
     justify-content: center;
     align-items: center;
     float:left;
-    padding: 20px;
+    /* padding: 20px; */
     padding-bottom: 30px;
-    padding-top: 30px;
+    /* padding-top: 30px; */
 
 }
 #form-header{
@@ -60,10 +64,11 @@ label {
     text-transform: uppercase;
     letter-spacing: 1px;
 }
-login_form{
+#login_form{
 
     width: 100%;
     height: 90%;
+    /* Overflow-y:scroll; */
     float:left;
     display: flex;
     justify-content: center;
@@ -78,7 +83,7 @@ login_form{
     border-radius: 3px;
     display: flex;
     align-items: center;
-    max-height: 65px;
+    max-height: 40px;
     overflow: hidden;
 }
 input{
@@ -112,7 +117,7 @@ input{
 }
 #signinbtn{
     width: 100%;
-    height: 80%;
+    height: 30px;
     /* padding: 10px 60px; */
     background-color: #FFBE0B;
     color: rgb(24, 24, 30);
@@ -134,7 +139,7 @@ input{
 
 #signupbtn{
     width: 100%;
-    height: 80%;
+    height: 30px;
     /* padding: 10px 60px; */
     background-color: #FFBE0B;
     color: rgb(24, 24, 30);
