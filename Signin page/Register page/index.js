@@ -1,116 +1,54 @@
-// // Import the functions you need from the SDKs you need
-// import { initializeApp } from "firebase/app";
-// import { getAnalytics } from "firebase/analytics";
-// // TODO: Add SDKs for Firebase products that you want to use
-// // https://firebase.google.com/docs/web/setup#available-libraries
-
-// // Your web app's Firebase configuration
-// // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-// const firebaseConfig = {
-//   apiKey: "AIzaSyCtAAhtkFXZald-dzLC8HSEzzTG1Ic0eO0",
-//   authDomain: "login-page-bd735.firebaseapp.com",
-//   databaseURL: "https://login-page-bd735-default-rtdb.firebaseio.com",
-//   projectId: "login-page-bd735",
-//   storageBucket: "login-page-bd735.appspot.com",
-//   messagingSenderId: "441688971219",
-//   appId: "1:441688971219:web:9a777a7477156af70ac126",
-//   measurementId: "G-7GTXM5QH3R"
-// };
-
-
-// // Initialize Firebase
-// const app = initializeApp(firebaseConfig);
-// const analytics = getAnalytics(app);
-
-// const quoteURL = 'https://type.fit/api/quotes'
-// const email = document.getElementById("email").value;
-// const password = document.getElementById("password").value;
-// const loginForm=document.getElementById('loginForm')
-// let btn=document.getElementById('btn');
-
-// import {auth,createUserWithEmailAndPassword ,signInWithEmailAndPassword} from './firebase.js'
-
-//  const userData = {Email: email, Password: password, 
-//     // FirstName:firstName, LastName: lastName, 
-//     }
-
-
 
 
 const loginForm=document.getElementById('Login-form');
 loginForm.addEventListener('submit', (e)=>{
     e.preventDefault();})
 
-//     // get user info
-//     const email = document.getElementById("email").value;
-//     const password =  document.getElementById("password").value;
 
-//     // sign up the user
-//     auth.createUserWithEmailAndPassword(email,password).then(userCredential=>{
-//         console.log(userCredential.user);
-//         const container=document.querySelector('#form-container');
+    
+// import {auth} from "./firebase-config.js"
+// import { createUserWithEmailAndPassword } from "firebase/auth";
 
-//     })
+// const signupbtn=document.getElementById('signupbtn')
+// signupbtn.addEventListener('click',(e) => {
 
-// })
-import {auth} from "./firebase-config.js"
-import { createUserWithEmailAndPassword } from "firebase/auth";
-
-const signupbtn=document.getElementById('signupbtn')
-signupbtn.addEventListener('click',(e) => {
-
-    console.log('hiiiiiiiiiiiiiiiiiiiiii')
-    var email= document.getElementById('email').value;
-    var password= document.getElementById('password').value;
-    var username= document.getElementById('name').value;
-    console.log( 'email',email)
-    console.log('password', password)
-    console.log('user name',username)
+//     console.log('hiiiiiiiiiiiiiiiiiiiiii')
+//     var email= document.getElementById('email').value;
+//     var password= document.getElementById('password').value;
+//     var username= document.getElementById('name').value;
+//     console.log( 'email',email)
+//     console.log('password', password)
+//     console.log('user name',username)
     
     
-    createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        // Signed in 
-        const user = userCredential.user;
-        // ...
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        // ..
-      });
-let signinbtn=document.getElementById("signinbtn")
-let name=document.getElementById("name")
-let formHeader=document.getElementById("form-header")
+//     createUserWithEmailAndPassword(auth, email, password)
+//       .then((userCredential) => {
+//         // Signed in 
+//         const user = userCredential.user;
+//         // ...
+//       })
+//       .catch((error) => {
+//         const errorCode = error.code;
+//         const errorMessage = error.message;
+//         // ..
+//       });
+// let signinbtn=document.getElementById("signinbtn")
+// let name=document.getElementById("name")
+// let formHeader=document.getElementById("form-header")
 
-signinbtn.onclick=function(){
-    name.style.maxHeight="0"
-}
+// signinbtn.onclick=function(){
+//     name.style.maxHeight="0"
+// }
 
     
 
 
-// let btn=document.getElementById('btn');
 
-// const userData = {Email: email, Password: password, 
-//     FirstName: firstName, LastName: lastName, 
-//     }
-
-// createUserWithEmailAndPassword(auth, email, password)
-// .then((userCredential)=>{
-//     console.log(userCredential.user)
-
-//     // save the user into database
-//     window.location.href='signin.html'
-// })
-
-
-
-signInWithEmailAndPassword(auth, email, password)
-             .then((userCredential)=>{
-                 console.log(userCredential.user)
-                 window.location.href='signin.html'
-             })
+// signInWithEmailAndPassword(auth, email, password)
+//              .then((userCredential)=>{
+//                  console.log(userCredential.user)
+//                  window.location.href='signin.html'
+//              })
             
  
                 
@@ -125,15 +63,6 @@ function fetchRandomQuote()
 
 }
 
-   
-
-        // .then(response,json())
-        // .then(data=>{
-        //     const quotes=data;
-        //     const randomIndex=Math.floor(Math.random()* quotes.length);
-        //     const randomQuote=quotes[randomIndex];
-    
- 
 
 
 function createBirthdayMsg(name, birthday) 
@@ -186,5 +115,5 @@ function showBirthdayPopup()
 }
 
 signinbtn.addEventListener('click',showBirthdayPopup);
-signupbtn.addEventListener('click',showBirthdayPopup);
-})
+// signupbtn.addEventListener('click',showBirthdayPopup);
+// })
