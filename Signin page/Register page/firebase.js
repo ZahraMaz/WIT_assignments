@@ -21,7 +21,15 @@
       const app = initializeApp(firebaseConfig);
       const auth = getAuth(app);
       
-      signInWithEmailAndPassword(auth, "a@b.com", "qwerty")
+      
+        
+function signin_user()
+{
+    var eml = document.getElementById("email").value
+    alert(eml)
+    var pw = document.getElementById("password").value
+    alert(pw)
+    signInWithEmailAndPassword(auth, eml, pw)
         .then((userCredential) => {
             // Signed in 
             const user = userCredential.user;
@@ -29,4 +37,30 @@
         .catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
+            alert(errorMessage)
+            alert(errorCode)
         });
+
+}
+
+alert("Start")
+// signinbtn.addEventListener('click',signin_user, function(event){
+//     event.preventDefault()});
+
+signInWithEmailAndPassword(auth, "a@b.com", "qwe9rty")
+        .then((userCredential) => {
+            // Signed in 
+            alert("auth1")
+            const user = userCredential.user;
+            alert("auth2")
+            alert(user.email)
+        })
+        .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            alert(errorMessage)
+            alert(errorCode)
+        });
+
+
+alert("Finish")
