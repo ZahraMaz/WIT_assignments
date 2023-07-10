@@ -1,4 +1,4 @@
-html,body {
+ html,body {
     width:100%;
     height:100%;
     background: -webkit-linear-gradient(25deg, #FFBE0B,#FB5607,#FF006E,#8338EC,#3A86FF);
@@ -12,21 +12,34 @@ html,body {
     padding:0;box-sizing: border-box;
     border: none;
     outline: none;
+
+h1{
+    font-size:30px;
+    margin-bottom:60px;
+    color:#3c00a0;
+    position:relative;
+}    
 }
+
+label {
+    margin-left: 10px;
+    font-weight: bold;
+  }
 #form-container{
     margin:0 auto;
     width: 30%;
-    height: 70%;
-    text-align: center;
+    height: 50%;
+    
 
 }
 #Login-form{
     width: 100%;
     height: 100%;
-    background-color: #370617;
+    background-color: transparent;
     box-shadow: 0 0 50px #000;
     border-radius: 2%;
     overflow:hidden;
+    padding: 5%;
     
 }
 #form-header-container{
@@ -47,7 +60,7 @@ html,body {
     text-transform: uppercase;
     letter-spacing: 1px;
 }
-#login_form{
+login_form{
 
     width: 100%;
     height: 90%;
@@ -59,49 +72,82 @@ html,body {
 
 
 }
+.input-field{
+    background: white;
+    margin: 10px 0;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    max-height: 65px;
+    overflow: hidden;
+}
 input{
     width: 100%;
-    height: 40px;
+    height: 20px;
     padding-left: 10px;
     margin-left: 10px;
     margin-bottom: 20px;
-    background: #7e5353;
+    margin-top:20px ;
+    background:white;
     font-weight: 500;
-    color: #fff;
+    color: #1d1b1b;
     font-size: 12px;
     border-bottom: 2px solid transparent;
     border-top-left-radius: 2%;
     border-top-right-radius: 2%;
     border-image: fill;
+    border: gray 50x solid
 
 }
 #button_container{
     width: 100%;
-    height: 10%;
+    height: 15%;
     color: #fff;
     float: left;
     margin: 5px;
     display: flex;
-    align-items: center ;
+    align-items: center;
     justify-content: center;
+    
 }
-#btn{
-    width: 100px;
-    height: 100%;
-    padding: 10px 60px;
-    float:left;
+#signinbtn{
+    width: 100%;
+    height: 80%;
+    /* padding: 10px 60px; */
     background-color: #FFBE0B;
     color: rgb(24, 24, 30);
-    letter-spacing: 1px;
-    font-weight: 900;
-    font-size: 12px;
+    font-weight: bold;
+    font-size: 16px;
     cursor:pointer;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 20px;
+    border-radius: 5px
 
 }
+.text-login{
+    font-weight: bold;
+    text-align: center;
+    margin-top: 100px;
+
+}
+
+#signupbtn{
+    width: 100%;
+    height: 80%;
+    /* padding: 10px 60px; */
+    background-color: #FFBE0B;
+    color: rgb(24, 24, 30);
+    font-weight: bold;
+    font-size: 16px;
+    cursor:pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px
+
+}
+
 
 
  
