@@ -48,11 +48,10 @@
 //     event.preventDefault()});
 
 // SignIn code
-function signin_user(user, pw)
+export function firebase_signin(user, pw)
 {
 signInWithEmailAndPassword(auth, user, pw)
         .then((userCredential) => {
-            // Signed in 
             // alert("auth1")
             const user = userCredential.user;
             // alert("auth2")

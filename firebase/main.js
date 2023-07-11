@@ -1,5 +1,5 @@
 
-import  {firebase_signup} from "./firebase.js"
+import  {firebase_signin} from "./firebase.js"
 
 const loginForm=document.getElementById('Login-form');
 loginForm.addEventListener('submit', (e)=>{
@@ -127,5 +127,5 @@ export function signin_user()
     var signup_email = document.getElementById("email").value
     var signup_pw = document.getElementById("password").value
     alert("ABCD")
-    // firebase_signup(signup_email, signup_pw)
+    firebase_signin(signup_email, signup_pw)
 }
