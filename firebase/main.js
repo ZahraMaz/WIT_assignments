@@ -1,5 +1,5 @@
 
-import  {firebase_signin} from "./firebase.js"
+import  {firebase_signin, firebase_signup} from "./firebase.js"
 
 const loginForm=document.getElementById('Login-form');
 loginForm.addEventListener('submit', (e)=>{
