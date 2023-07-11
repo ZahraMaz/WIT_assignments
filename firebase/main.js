@@ -119,7 +119,9 @@ export function signup_user()
 {
     var signup_email = document.getElementById("email").value
     var signup_pw = document.getElementById("password").value
-    firebase_signup(signup_email, signup_pw)
+    var signup_name = document.getElementById("name").value
+    var signup_dob = document.getElementById("birthdate").value
+    firebase_signup(signup_email, signup_pw, signup_name, signup_dob)
 }
 
 export function signin_user()
