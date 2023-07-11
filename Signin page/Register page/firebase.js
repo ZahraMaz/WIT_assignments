@@ -23,16 +23,40 @@
       
       
         
-function signin_user()
+// function signin_user()
+// {
+//     var eml = document.getElementById("email").value
+//     alert(eml)
+//     var pw = document.getElementById("password").value
+//     alert(pw)
+//     signInWithEmailAndPassword(auth, eml, pw)
+//         .then((userCredential) => {
+//             // Signed in 
+//             const user = userCredential.user;
+//         })
+//         .catch((error) => {
+//             const errorCode = error.code;
+//             const errorMessage = error.message;
+//             alert(errorMessage)
+//             alert(errorCode)
+//         });
+
+// }
+
+// alert("Start")
+// signinbtn.addEventListener('click',signin_user, function(event){
+//     event.preventDefault()});
+
+// SignIn code
+function signin_user(user, pw)
 {
-    var eml = document.getElementById("email").value
-    alert(eml)
-    var pw = document.getElementById("password").value
-    alert(pw)
-    signInWithEmailAndPassword(auth, eml, pw)
+signInWithEmailAndPassword(auth, user, pw)
         .then((userCredential) => {
             // Signed in 
+            // alert("auth1")
             const user = userCredential.user;
+            // alert("auth2")
+            // alert(user.email)
         })
         .catch((error) => {
             const errorCode = error.code;
@@ -42,47 +66,23 @@ function signin_user()
         });
 
 }
-
-alert("Start")
-// signinbtn.addEventListener('click',signin_user, function(event){
-//     event.preventDefault()});
-
-// SignIn code
-// signInWithEmailAndPassword(auth, "a@b.com", "qwerty")
-//         .then((userCredential) => {
-//             // Signed in 
-//             alert("auth1")
-//             const user = userCredential.user;
-//             alert("auth2")
-//             alert(user.email)
-//         })
-//         .catch((error) => {
-//             const errorCode = error.code;
-//             const errorMessage = error.message;
-//             alert(errorMessage)
-//             alert(errorCode)
-//         });
-
-
 // SignUp code
 
-
-// createUserWithEmailAndPassword(auth, "cl@d.com", "asdfgh")
-//   .then((userCredential) => {
-//     // Signed in 
-//             alert("auth1")
-//     const user = userCredential.user;
-//             alert("auth2")
-//             alert(user.email)
-//     // ...
-//   })
-//   .catch((error) => {
-//     const errorCode = error.code;
-//     const errorMessage = error.message;
-//             alert(errorMessage)
-//             alert(errorCode)
-//     // ..
-//   });
-
+export function firebase_signup(user, pw)
+{
+createUserWithEmailAndPassword(auth, user, pw)
+  .then((userCredential) => {
+            // alert("auth1")
+    const user = userCredential.user;
+    // alert("auth2")
+    // alert(user.email)
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    alert(errorMessage)
+    alert(errorCode)
+  });
+}
 
 // alert("Finish")

@@ -1,4 +1,5 @@
 
+import  {firebase_signup} from "./firebase.js"
 
 const loginForm=document.getElementById('Login-form');
 loginForm.addEventListener('submit', (e)=>{
@@ -114,6 +115,12 @@ function showBirthdayPopup()
     createBirthdayMsg(name, birthday);
 }
 
-signinbtn.addEventListener('click',showBirthdayPopup);
-// signupbtn.addEventListener('click',showBirthdayPopup);
-// })
+function signup_user()
+{
+    var signup_email = document.getElementById("email").value
+    var signup_pw = document.getElementById("password").value
+    firebase_signup(signup_email, signup_pw)
+}
+
+signupbtn.addEventListener('click',signup_user);
+// signinbtn.addEventListener('click',showBirthdayPopup);
