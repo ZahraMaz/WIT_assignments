@@ -126,8 +126,7 @@ export function signup_user()
 
 export function signin_user()
 {
-    var signup_email = document.getElementById("email").value
-    var signup_pw = document.getElementById("password").value
-    alert("ABCD")
-    firebase_signin(signup_email, signup_pw)
+    var signin_email = document.getElementById("email").value
+    var signin_pw = document.getElementById("password").value
+    firebase_signin(signin_email, signin_pw)
 }
