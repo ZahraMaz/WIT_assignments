@@ -1,3 +1,5 @@
+import  {createBirthdayMsg} from "./main.js"
+
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js";
 import { getDatabase, ref, set, child, get } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-database.js";
@@ -21,8 +23,7 @@ const database = getDatabase(app);
 function firebase_readUserData(uid) {
   get(child(ref(database), `users/` + uid)).then((snapshot) => {
     if (snapshot.exists()) {
-      alert(snapshot.val().name);
-      alert(snapshot.val().DOB);
+      createBirthdayMsg(snapshot.val().name, snapshot.val().DOB)
     } else {
       alert("No data available");
     }
