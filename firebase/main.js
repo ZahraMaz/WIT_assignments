@@ -28,7 +28,8 @@ export function createBirthdayMsg(name, birthday)
                 .then((qt) => {
                     let idx=Math.floor(Math.random()*qt.length)
                     let msg = birthdayMessage + "\n\"" + qt[idx].text + "\"\n" + qt[idx].author
-                    alert(msg)
+                    document.getElementById("form-header").innerHTML = msg;
+                    // alert(msg)
                 });
         } 
         else 
@@ -40,7 +41,8 @@ export function createBirthdayMsg(name, birthday)
             }
             var daysUntilBirthday = Math.ceil((nextBirthday - today) / (1000 * 60 * 60 * 24));
             var birthdayCountdown = "Hi " + name + "! Your birthday is in " + daysUntilBirthday + " day(s).";
-            alert(birthdayCountdown);
+            document.getElementById("form-header").innerHTML = birthdayCountdown;
+            //alert(birthdayCountdown);
         }
     }
 }

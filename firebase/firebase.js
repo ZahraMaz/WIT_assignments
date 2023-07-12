@@ -37,6 +37,7 @@ export function firebase_signin(user, pw)
 signInWithEmailAndPassword(auth, user, pw)
         .then((userCredential) => {
             const user = userCredential.user;
+            document.getElementById("Login-form").style.display = "none";
             firebase_readUserData(user.uid)
         })
         .catch((error) => {
