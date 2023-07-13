@@ -30,8 +30,8 @@ export function createBirthdayMsg(name, birthday)
                 .then((response) => response.json())
                 .then((qt) => {
                     let idx=Math.floor(Math.random()*qt.length)
-                    let msg = birthdayMessage + "\n\"" + qt[idx].text + "\"\n" + qt[idx].author
-                    document.getElementById("form-header").innerHTML = msg;
+                    let msg = birthdayMessage + "\n\n\"" + qt[idx].text + "\"\n" + qt[idx].author
+                    document.getElementById("bd-message").innerHTML = msg;
                     // alert(msg)
                 });
         } 
@@ -44,7 +44,7 @@ export function createBirthdayMsg(name, birthday)
             }
             var daysUntilBirthday = Math.ceil((nextBirthday - today) / (1000 * 60 * 60 * 24));
             var birthdayCountdown = "Hi " + name + "! Your birthday is in " + daysUntilBirthday + " day(s).";
-            document.getElementById("form-header").innerHTML = birthdayCountdown;
+            document.getElementById("bd-message").innerHTML = birthdayCountdown;
         }
     }
 }
@@ -55,8 +55,8 @@ export function signup_user()
     var signup_pw = document.getElementById("password").value
     var signup_name = document.getElementById("name").value
     var signup_dob = document.getElementById("birthdate").value
-    firebase_signup(signup_email, signup_pw, signup_name, signup_dob)
-    
+    let signup_success = firebase_signup(signup_email, signup_pw, signup_name, signup_dob)
+    return signup_success    
 }
 
 export function signin_user()

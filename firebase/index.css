@@ -59,11 +59,23 @@ label {
 
 }
 #form-header{
+    white-space: pre-line;
     display: inline-block;
     font-weight: 900;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
+#bd-message{
+    white-space: pre-line;
+    display: inline-block;
+    font-size:20px;
+    justify-content: center;
+    text-align: center;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
 #login_form{
 
     width: 100%;
@@ -138,7 +150,7 @@ input{
 }
 
 #signoutbtn{
-    width: 100%;
+    width: 150px;
     height: 30px;
     /* padding: 10px 60px; */
     background-color: #FFBE0B;

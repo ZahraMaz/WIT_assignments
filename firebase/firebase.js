@@ -63,20 +63,26 @@ function firebase_writeUserData(uid, email, name, dob) {
     DOB : dob
   });
 }
-export function firebase_signup(email, pw, name, dob)
+export async function firebase_signup(email, pw, name, dob)
 {
-createUserWithEmailAndPassword(auth, email, pw)
+let signup_success = await createUserWithEmailAndPassword(auth, email, pw)
   .then((userCredential) => {
     const user = userCredential.user;
     firebase_writeUserData(user.uid, email, name, dob)
-    alert('Sign up successful, Please use your credentials to login.')
-    window.open("signin.html", "_self")
+    return true
   })
   .catch((error) => {
     const errorCode = error.code;
     const errorMessage = error.message;
     alert(errorMessage)
     alert(errorCode)
+    return false
   });
+
+  if (signup_success)
+  {
+    alert('Sign up successful, Please use your credentials to login.')
+  }
+  return signup_success
 }
 
