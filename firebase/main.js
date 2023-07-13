@@ -8,15 +8,6 @@ loginForm.addEventListener('submit', (e)=>{
     e.preventDefault();})     
 }
 
-function fetchRandomQuote()
-{
-    const quoteURL = 'https://type.fit/api/quotes'
-    qt = fetch(quoteURL)
-    alert(qt)
-    return qt
-
-}
-
 export function createBirthdayMsg(name, birthday)
 {
     var today = new Date();

@@ -43,10 +43,8 @@ signInWithEmailAndPassword(auth, user, pw)
             window.open("user_content.html", "_self")
         })
         .catch((error) => {
-            const errorCode = error.code;
             const errorMessage = error.message;
             alert(errorMessage)
-            alert(errorCode)
         });
 }
 
@@ -72,10 +70,8 @@ let signup_success = await createUserWithEmailAndPassword(auth, email, pw)
     return true
   })
   .catch((error) => {
-    const errorCode = error.code;
     const errorMessage = error.message;
     alert(errorMessage)
-    alert(errorCode)
     return false
   });
 
