@@ -30,7 +30,15 @@ export function createBirthdayMsg(name, birthday)
                 .then((response) => response.json())
                 .then((qt) => {
                     let idx=Math.floor(Math.random()*qt.length)
-                    let msg = birthdayMessage + "\n\n\"" + qt[idx].text + "\"\n" + qt[idx].author
+                    let msg = birthdayMessage + "\n\n\"" + qt[idx].text
+                    if (qt[idx].author==null)
+                    {
+                        msg = msg + "\"\n ANONYMOUS"
+                    }
+                    else
+                    {
+                        msg = msg + "\"\n" + qt[idx].author
+                    }
                     document.getElementById("bd-message").innerHTML = msg;
                     // alert(msg)
                 });
