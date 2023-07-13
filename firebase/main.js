@@ -2,8 +2,11 @@
 import  {firebase_signin, firebase_signup} from "./firebase.js"
 
 const loginForm=document.getElementById('Login-form');
+if (loginForm!=null)
+{
 loginForm.addEventListener('submit', (e)=>{
     e.preventDefault();})     
+}
 
 function fetchRandomQuote()
 {
@@ -42,7 +45,6 @@ export function createBirthdayMsg(name, birthday)
             var daysUntilBirthday = Math.ceil((nextBirthday - today) / (1000 * 60 * 60 * 24));
             var birthdayCountdown = "Hi " + name + "! Your birthday is in " + daysUntilBirthday + " day(s).";
             document.getElementById("form-header").innerHTML = birthdayCountdown;
-            //alert(birthdayCountdown);
         }
     }
 }
@@ -54,6 +56,7 @@ export function signup_user()
     var signup_name = document.getElementById("name").value
     var signup_dob = document.getElementById("birthdate").value
     firebase_signup(signup_email, signup_pw, signup_name, signup_dob)
+    firebase_signin(signup_email, signup_pw)
 }
 
 export function signin_user()

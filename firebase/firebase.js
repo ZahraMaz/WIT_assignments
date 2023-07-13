@@ -20,12 +20,13 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const database = getDatabase(app);
 
-function firebase_readUserData(uid) {
+export function firebase_createUserContent() {
+  let uid = localStorage.getItem("uid");
   get(child(ref(database), `users/` + uid)).then((snapshot) => {
     if (snapshot.exists()) {
       createBirthdayMsg(snapshot.val().name, snapshot.val().DOB)
     } else {
-      alert("No data available");
+      alert("No active user found, Please sign in");
     }
   }).catch((error) => {
     alert(error);
@@ -37,8 +38,9 @@ export function firebase_signin(user, pw)
 signInWithEmailAndPassword(auth, user, pw)
         .then((userCredential) => {
             const user = userCredential.user;
-            document.getElementById("Login-form").style.display = "none";
-            firebase_readUserData(user.uid)
+            //document.getElementById("Login-form").style.display = "none";
+            localStorage.setItem("uid", user.uid);
+            window.open("user_content.html", "_self")
         })
         .catch((error) => {
             const errorCode = error.code;
@@ -46,7 +48,12 @@ signInWithEmailAndPassword(auth, user, pw)
             alert(errorMessage)
             alert(errorCode)
         });
+}
 
+export function firebase_signOut()
+{
+  localStorage.removeItem("uid");
+  window.open("singin.html", "_self")
 }
 
 function firebase_writeUserData(uid, email, name, dob) {
