@@ -53,7 +53,7 @@ signInWithEmailAndPassword(auth, user, pw)
 export function firebase_signOut()
 {
   localStorage.removeItem("uid");
-  window.open("singin.html", "_self")
+  window.open("signin.html", "_self")
 }
 
 function firebase_writeUserData(uid, email, name, dob) {
@@ -69,6 +69,8 @@ createUserWithEmailAndPassword(auth, email, pw)
   .then((userCredential) => {
     const user = userCredential.user;
     firebase_writeUserData(user.uid, email, name, dob)
+    alert('Sign up successful, Please use your credentials to login.')
+    window.open("signin.html", "_self")
   })
   .catch((error) => {
     const errorCode = error.code;
