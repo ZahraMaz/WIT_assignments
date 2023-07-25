@@ -7,6 +7,7 @@ import logo from './logo.svg';
 import './App.css';
 import Signup from './components/Auth/Signup';
 import Login from './components/Auth/Login';
+import {BrowserRouter as Router , Route , Switch} from "react-router-dom"
 
 function App() {
   return (
