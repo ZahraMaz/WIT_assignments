@@ -13,8 +13,8 @@ function App() {
     
     <div className="App">
       {/* <Route path="/Signup" component={Signup} /> */}
-      <Login/>
-      {/* <Signup/> */}
+      {/* <Login/> */}
+      <Signup/>
       
       {/* <Login/> */}
       {/* <header className="App-header">
