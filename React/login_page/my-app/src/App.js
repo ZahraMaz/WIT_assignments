@@ -1,10 +1,23 @@
 import logo from './logo.svg';
+// import {
+//   BrowserRouter,
+//   Routes,
+//   Route
+// } from "react-router-dom";
 import './App.css';
+import Signup from './components/Auth/Signup';
+import Login from './components/Auth/Login';
 
 function App() {
   return (
+    
     <div className="App">
-      <header className="App-header">
+      {/* <Route path="/Signup" component={Signup} /> */}
+      <Login/>
+      {/* <Signup/> */}
+      
+      {/* <Login/> */}
+      {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
@@ -17,9 +30,11 @@ function App() {
         >
           Learn React
         </a>
-      </header>
+      </header> */}
     </div>
   );
+  
 }
+
 
 export default App;
