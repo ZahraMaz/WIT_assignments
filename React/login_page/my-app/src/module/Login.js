@@ -1,13 +1,22 @@
 import React, { useState } from 'react';
 // import { useState } from 'react'
 import {Link} from "react-router-dom";
+import { firebase_signin } from './firebase';
 
 const Login=()=>{
   const [email,setEmail]=useState('')
   const [password,setPassword]=useState('')
+
+  const emailChange=(e)=>{
+      setEmail(e.target.value)
+  }
+  const passwordChange=(e)=>{
+      setPassword(e.target.value)
+  }
+
   const loginUser=(e)=>{
     e.preventDefault()
-    
+    firebase_signin(email, password)
   }
     return(
       <div id="form-container">

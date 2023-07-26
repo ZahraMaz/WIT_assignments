@@ -83,5 +83,5 @@ let signup_success = await createUserWithEmailAndPassword(auth, email, pw)
   }
   return signup_success
 }
-export{getAuth , signInWithEmailAndPassword , getDatabase, ref, set, child, get}
+export{getAuth , getDatabase, ref, set, child, get}
 
