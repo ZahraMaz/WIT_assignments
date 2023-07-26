@@ -4,6 +4,11 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebas
 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js";
 import { getDatabase, ref, set, child, get } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-database.js";
 
+// import { initializeApp } from "firebase";
+// import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "firebase";
+// import { getDatabase, ref, set, child, get } from "firebase";
+
+
 const firebaseConfig = {
   apiKey: "AIzaSyCtAAhtkFXZald-dzLC8HSEzzTG1Ic0eO0",
   authDomain: "login-page-bd735.firebaseapp.com",
@@ -81,5 +86,5 @@ let signup_success = await createUserWithEmailAndPassword(auth, email, pw)
   }
   return signup_success
 }
-export{getAuth, createUserwithEmailAndPassword , signInWithEmailAndPassword , getDatabase, ref, set, child, get}
+export{getAuth , signInWithEmailAndPassword , getDatabase, ref, set, child, get}
 

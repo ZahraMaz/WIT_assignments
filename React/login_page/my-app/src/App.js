@@ -5,8 +5,8 @@ import logo from './logo.svg';
 //   Route
 // } from "react-router-dom";
 import './App.css';
-import Signup from './components/Auth/Signup';
-import Login from './components/Auth/Login';
+import Signup from './module/Signup';
+import Login from './module/Login';
 import {BrowserRouter as Router , Route , Switch} from "react-router-dom"
 
 function App() {
