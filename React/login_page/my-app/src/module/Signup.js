@@ -3,14 +3,6 @@ import { useState } from 'react'
 import './Signup.css'
 
 import { firebase_signup } from './firebase';
-// import { firebase_signup } from '../../module/firebase';
-// import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from 'firebase';
-// import { getDatabase, ref, set, child, get } from ".module/firebse";
-
-// import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
-// import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js";
-// import { getDatabase, ref, set, child, get } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-database.js";
-
 
 function Signup(){
     const [email,setEmail]=useState('')
@@ -32,10 +24,6 @@ function Signup(){
     }
     const createUser=(e)=>{
       e.preventDefault()
-      console.log(email)
-      console.log(password)
-      console.log(name)
-      console.log(birthdate)
       firebase_signup(email, password, name, birthdate)
     }
 

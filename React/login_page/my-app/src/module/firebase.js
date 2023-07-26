@@ -1,12 +1,9 @@
 import  {createBirthdayMsg} from "./main.js"
 // TODO: refactor: move components to component folder
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
-import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js";
-import { getDatabase, ref, set, child, get } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-database.js";
 
-// import { initializeApp } from "firebase";
-// import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "firebase";
-// import { getDatabase, ref, set, child, get } from "firebase";
+import { initializeApp } from "firebase/app";
+import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "firebase/auth";
+import { getDatabase, ref, set, child, get } from "firebase/database";
 
 
 const firebaseConfig = {
