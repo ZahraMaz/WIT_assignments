@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 // import { useState } from 'react'
-// import {Link} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 const Login=()=>{
   const [email,setEmail]=useState('')
@@ -27,8 +27,8 @@ const Login=()=>{
           </div>
           <div className="text-login">
             <p>
-            {/* <Link to="/Signup">Signup</Link> */}
-              Don't have an account?<a href="signup.html"><span>Sign up</span></a>
+             <span>Don't have an account?</span>
+            <Link to="/Signup">Sign up</Link>
             </p>
           </div>
         </form>

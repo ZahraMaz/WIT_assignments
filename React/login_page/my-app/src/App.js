@@ -15,9 +15,20 @@ function App() {
     <div className="App">
       {/* <Route path="/Signup" component={Signup} /> */}
       {/* <Login/> */}
-      <Signup/>
+      <Router>
+        <Switch>
+          <Route path="/Signup">
+            <Signup/>
+          </Route>
+          <Route path="/Login">
+            <Login/>
+          </Route>
+          <Route path="/">
+            <Login/>
+          </Route>
+        </Switch>
+      </Router>
       
-      {/* <Login/> */}
       {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>

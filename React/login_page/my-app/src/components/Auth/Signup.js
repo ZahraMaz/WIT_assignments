@@ -23,7 +23,7 @@ function Signup(){
         setBirthdate(e.target.value)
     }
     const createUser=(e)=>{
-      e.preventdefault()
+      // e.preventdefault()
       console.log(email)
       console.log(password)
       console.log(name)
@@ -47,7 +47,7 @@ function Signup(){
           </div>
           <div className="input-field">
             <label htmlFor="email">Email:</label>
-            <input type="email" id="email" required /><br onChange={emailChange}/>
+            <input type="email" id="email" required onChange={emailChange}/><br/>
           </div>
           <div className="input-field">
             <label htmlFor="password">Password:</label>
