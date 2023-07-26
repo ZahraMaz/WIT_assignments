@@ -2,7 +2,7 @@ import React from 'react';
 import { useState } from 'react'
 import './Signup.css'
 
-// import { firebase_signup } from 'firebase';
+import { firebase_signup } from './firebase';
 // import { firebase_signup } from '../../module/firebase';
 // import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from 'firebase';
 // import { getDatabase, ref, set, child, get } from ".module/firebse";
@@ -31,12 +31,12 @@ function Signup(){
         setBirthdate(e.target.value)
     }
     const createUser=(e)=>{
-      // e.preventdefault()
+      e.preventDefault()
       console.log(email)
       console.log(password)
       console.log(name)
       console.log(birthdate)
-      // firebase_signup(email, password, name, birthdate)
+      firebase_signup(email, password, name, birthdate)
     }
 
     return(
