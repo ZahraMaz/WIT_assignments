@@ -1,20 +1,22 @@
 import React, { useState } from 'react';
 import {Link} from "react-router-dom";
-import { firebase_signin } from './firebase';
+import { Firebase_signin } from './firebase';
 import { useHistory } from 'react-router-dom';
 
 const Signin=()=>{
   const [email,setEmail]=useState('')
   const [password,setPassword]=useState('')
-  const history=useHistory();
+  // const history=useHistory();
 
   const emailChange=(e)=>{setEmail(e.target.value)}
   const passwordChange=(e)=>{setPassword(e.target.value)}
-  
-  const loginUser=(e)=>{
+  const history=useHistory();
+
+  function signinUser(e){
     e.preventDefault()
-    firebase_signin(email, password)
-    history.push('/main.js')
+    Firebase_signin(email, password)
+   
+    
   }
     return(
       <div id="form-container">
@@ -31,7 +33,7 @@ const Signin=()=>{
             <input type="password" id="password" required  onChange={passwordChange}/><br />
           </div>
           <div id="button_container">
-            <button type="submit" id="signinbtn" onClick={loginUser}>Sign in</button>
+            <button type="submit" id="signinbtn" onClick={signinUser}>Sign in</button>
           </div>
           <div className="text-login">
             <p>

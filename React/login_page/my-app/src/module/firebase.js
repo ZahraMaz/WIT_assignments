@@ -1,5 +1,6 @@
-import  {createBirthdayMsg} from "./main.js"
+// import  {createBirthdayMsg} from "./main.js"
 // TODO: refactor: move components to component folder
+import { useHistory } from 'react-router-dom';
 
 import { initializeApp } from "firebase/app";
 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "firebase/auth";
@@ -35,21 +36,6 @@ const database = getDatabase(app);
 //   });
 // }
 
-export function firebase_signin(user, pw)
-{
-signInWithEmailAndPassword(auth, user, pw)
-        .then((userCredential) => {
-            const user = userCredential.user;
-            //document.getElementById("Login-form").style.display = "none";
-            localStorage.setItem("uid", user.uid);
-            window.open("user_content.html", "_self")
-        })
-        .catch((error) => {
-            const errorMessage = error.message;
-            alert(errorMessage)
-        });
-}
-
 export function firebase_signOut()
 {
   localStorage.removeItem("uid");
@@ -83,5 +69,23 @@ let signup_success = await createUserWithEmailAndPassword(auth, email, pw)
   }
   return signup_success
 }
+
+export async function Firebase_signin(user, pw)
+{
+  // const history=useHistory();
+  await signInWithEmailAndPassword(auth, user, pw)
+  .then((userCredential) => {
+      const user = userCredential.user;
+      //document.getElementById("Login-form").style.display = "none";
+      localStorage.setItem("uid", user.uid);
+      alert(user.uid)
+      // history.push('/usercontent')
+  })
+  .catch((error) => {
+      const errorMessage = error.message;
+      alert(errorMessage)
+  });
+}
+
 export{getAuth , getDatabase, ref, set, child, get}
 
