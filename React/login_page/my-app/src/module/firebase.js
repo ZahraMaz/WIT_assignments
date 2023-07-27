@@ -22,18 +22,18 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const database = getDatabase(app);
 
-export function firebase_createUserContent() {
-  let uid = localStorage.getItem("uid");
-  get(child(ref(database), `users/` + uid)).then((snapshot) => {
-    if (snapshot.exists()) {
-      createBirthdayMsg(snapshot.val().name, snapshot.val().DOB)
-    } else {
-      alert("No active user found, Please sign in");
-    }
-  }).catch((error) => {
-    alert(error);
-  });
-}
+// export function firebase_createUserContent() {
+//   let uid = localStorage.getItem("uid");
+//   get(child(ref(database), `users/` + uid)).then((snapshot) => {
+//     if (snapshot.exists()) {
+//       createBirthdayMsg(snapshot.val().name, snapshot.val().DOB)
+//     } else {
+//       alert("No active user found, Please sign in");
+//     }
+//   }).catch((error) => {
+//     alert(error);
+//   });
+// }
 
 export function firebase_signin(user, pw)
 {

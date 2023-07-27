@@ -41,7 +41,7 @@ label {
     align-items: center;
     width: 30%;
     height: 50%;
-    
+    padding-top: 90px;
 
 }
 #Login-form{
@@ -127,19 +127,20 @@ input{
 }
 #button_container{
     width: 100%;
-    height: 15%;
+    height: 20%;
     color: #fff;
     float: left;
     margin: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-right: 10px;
     
 }
 #signinbtn{
     width: 100%;
     height: 30px;
-    /* padding: 10px 60px; */
+     /* padding: 10px 60px; */ 
     background-color: #FFBE0B;
     color: rgb(24, 24, 30);
     font-weight: bold;
@@ -149,6 +150,7 @@ input{
     justify-content: center;
     align-items: center;
     border-radius: 5px
+    
 
 }
 .text-login{
@@ -171,6 +173,7 @@ input{
     justify-content: center;
     align-items: center;
     border-radius: 5px
+    
 
 }
 
@@ -188,6 +191,12 @@ input{
     align-items: center;
     border-radius: 5px
 
+}
+#signupbtn:hover{
+    background-color: #d39144;
+}
+#signinbtn:hover{
+    background-color: #d39144;
 }
 
 

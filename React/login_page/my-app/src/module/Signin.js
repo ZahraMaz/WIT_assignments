@@ -1,22 +1,20 @@
 import React, { useState } from 'react';
-// import { useState } from 'react'
 import {Link} from "react-router-dom";
 import { firebase_signin } from './firebase';
+import { useHistory } from 'react-router-dom';
 
-const Login=()=>{
+const Signin=()=>{
   const [email,setEmail]=useState('')
   const [password,setPassword]=useState('')
+  const history=useHistory();
 
-  const emailChange=(e)=>{
-      setEmail(e.target.value)
-  }
-  const passwordChange=(e)=>{
-      setPassword(e.target.value)
-  }
-
+  const emailChange=(e)=>{setEmail(e.target.value)}
+  const passwordChange=(e)=>{setPassword(e.target.value)}
+  
   const loginUser=(e)=>{
     e.preventDefault()
     firebase_signin(email, password)
+    history.push('/main.js')
   }
     return(
       <div id="form-container">
@@ -26,11 +24,11 @@ const Login=()=>{
         <form id="Login-form">
           <div className="input-field">
             <label htmlFor="email">Email:</label>
-            <input type="email" id="email" required  onChange={(e)=>{setEmail(e.target.value)}}/><br />
+            <input type="email" id="email" required  onChange={emailChange}/><br />
           </div>
           <div className="input-field">
             <label htmlFor="password">Password:</label>
-            <input type="password" id="password" required  onChange={(e)=>{setPassword(e.target.value)}}/><br />
+            <input type="password" id="password" required  onChange={passwordChange}/><br />
           </div>
           <div id="button_container">
             <button type="submit" id="signinbtn" onClick={loginUser}>Sign in</button>
@@ -46,4 +44,4 @@ const Login=()=>{
 
     )
 }
-export default Login;
+export default Signin;

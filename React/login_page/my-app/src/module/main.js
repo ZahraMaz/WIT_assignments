@@ -1,4 +1,6 @@
+import React, { useState } from 'react';
 import  {firebase_signin, firebase_signup} from "./firebase.js"
+import { useHistory } from 'react-router-dom';
 
 const loginForm=document.getElementById('Login-form');
 if (loginForm!=null)
@@ -9,6 +11,7 @@ loginForm.addEventListener('submit', (e)=>{
 
 export function createBirthdayMsg(name, birthday)
 {
+    // const [bd-message,setBd-massage]=useState('')
     var today = new Date();
     if (name.trim() !== "")
     {
@@ -47,6 +50,13 @@ export function createBirthdayMsg(name, birthday)
     }
 }
 
+
+
+
+ 
+
+
+
 export function signup_user()
 {
     var signup_email = document.getElementById("email").value
@@ -63,3 +73,26 @@ export function signin_user()
     var signin_pw = document.getElementById("password").value
     firebase_signin(signin_email, signin_pw)
 }
+
+
+const Main=()=>{
+    const history=useHistory();
+    const signoutUser=(e)=>{
+        e.preventDefault() 
+        history.push('/')
+    }
+    
+
+    return(
+        <div id="form-container">
+        <div id="form-header-container">
+          <h1 id="bd-message"></h1>
+        </div>
+        <div id="button_container">
+          <button type="submit" id="signoutbtn" onClick={signoutUser}>Sign out</button>
+        </div>
+      </div>
+    )
+
+}
+

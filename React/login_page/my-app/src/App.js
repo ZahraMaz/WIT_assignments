@@ -6,7 +6,7 @@ import logo from './logo.svg';
 // } from "react-router-dom";
 import './App.css';
 import Signup from './module/Signup';
-import Login from './module/Login';
+import Signin from './module/Signin';
 import {BrowserRouter as Router , Route , Switch} from "react-router-dom"
 
 function App() {
@@ -21,10 +21,13 @@ function App() {
             <Signup/>
           </Route>
           <Route path="/Login">
-            <Login/>
+            <Signin/>
+          </Route>
+          <Route path="/main">
+            <main/>
           </Route>
           <Route path="/">
-            <Login/>
+            <Signin/>
           </Route>
         </Switch>
       </Router>
