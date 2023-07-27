@@ -1,4 +1,4 @@
-// import  {createBirthdayMsg} from "./main.js"
+import  {createBirthdayMsg} from "./user_content.js"
 // TODO: refactor: move components to component folder
 import { useHistory } from 'react-router-dom';
 
@@ -23,18 +23,18 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const database = getDatabase(app);
 
-// export function firebase_createUserContent() {
-//   let uid = localStorage.getItem("uid");
-//   get(child(ref(database), `users/` + uid)).then((snapshot) => {
-//     if (snapshot.exists()) {
-//       createBirthdayMsg(snapshot.val().name, snapshot.val().DOB)
-//     } else {
-//       alert("No active user found, Please sign in");
-//     }
-//   }).catch((error) => {
-//     alert(error);
-//   });
-// }
+export function firebase_createUserContent() {
+  let uid = localStorage.getItem("uid");
+  get(child(ref(database), `users/` + uid)).then((snapshot) => {
+    if (snapshot.exists()) {
+      createBirthdayMsg(snapshot.val().name, snapshot.val().DOB)
+    } else {
+      alert("No active user found, Please sign in");
+    }
+  }).catch((error) => {
+    alert(error);
+  });
+}
 
 export function firebase_signOut()
 {
@@ -78,7 +78,8 @@ export async function Firebase_signin(user, pw)
       const user = userCredential.user;
       //document.getElementById("Login-form").style.display = "none";
       localStorage.setItem("uid", user.uid);
-      alert(user.uid)
+      
+      firebase_createUserContent()
       // history.push('/usercontent')
   })
   .catch((error) => {
