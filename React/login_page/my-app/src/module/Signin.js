@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import {Link} from "react-router-dom";
 import { Firebase_signin } from './firebase';
 import { useHistory } from 'react-router-dom';
+import {auth,signInWithEmailAndPassword ,firebase_createUserContent} from './firebase'
 
 const Signin=()=>{
   const [email,setEmail]=useState('')
@@ -14,9 +15,21 @@ const Signin=()=>{
 
   function signinUser(e){
     e.preventDefault()
-    Firebase_signin(email, password)
-   
-    
+    // Firebase_signin(email, password)
+    // history.push('/usercontent')
+    signInWithEmailAndPassword(auth, email,password)
+    .then((userCredential) => {
+        const user = userCredential.user;
+        //document.getElementById("Login-form").style.display = "none";
+        localStorage.setItem("uid", user.uid);
+        
+        firebase_createUserContent()
+        history.push('/usercontent')
+    })
+    .catch((error) => {
+        const errorMessage = error.message;
+        alert(errorMessage)
+    }); 
   }
     return(
       <div id="form-container">

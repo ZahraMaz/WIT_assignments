@@ -32,7 +32,7 @@ export function createBirthdayMsg(name, birthday)
                         msg = msg + "\"\n" + qt[idx].author
                     }
                     // document.getElementById("bd-message").innerHTML = msg;
-                    alert(msg)
+                    // alert(msg)
                 });
         } 
         else 
@@ -45,30 +45,32 @@ export function createBirthdayMsg(name, birthday)
             var daysUntilBirthday = Math.ceil((nextBirthday - today) / (1000 * 60 * 60 * 24));
             msg = "Hi " + name + "! Your birthday is in " + daysUntilBirthday + " day(s).";
             // document.getElementById("bd-message").innerHTML = birthdayCountdown;
-            alert(msg)
+            
         }
         
     }
 }
 
 
-// const Usercontent=()=>{
-//     // const history=useHistory();
-//     const signoutUser=(e)=>{
-//         e.preventDefault()
-//     }
+ const Usercontent=()=>{
+    const history=useHistory();
+    const signoutUser=(e)=>{
+        e.preventDefault()
+        history.push('/')
+
+    }
     
 
-//     return(
-//         <div id="form-container">
-//         <div id="form-header-container">
-//           <h1 id="bd-message"></h1>
-//         </div>
-//         <div id="button_container">
-//           <button type="submit" id="signoutbtn" onClick={signoutUser}>Sign out</button>
-//         </div>
-//       </div>
-//     )
+    return(
+        <div id="form-container">
+        <div id="form-header-container">
+          <h1 id="bd-message"></h1>
+        </div>
+        <div id="button_container">
+          <button type="submit" id="signoutbtn" onClick={signoutUser}>Sign out</button>
+        </div>
+      </div>
+    )
 
-// }
-// export default Usercontent;
+}
+export default Usercontent;

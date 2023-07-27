@@ -1,7 +1,7 @@
 import './App.css';
 import Signup from './module/Signup';
 import Signin from './module/Signin';
-import Usercontent from './module/user_content';
+import Usercontent from './module/usercontent';
 import {BrowserRouter as Router , Route , Switch} from "react-router-dom"
 
 function App() {
@@ -16,9 +16,9 @@ function App() {
           <Route path="/Login">
             <Signin/>
           </Route>
-          {/* <Route path="/usercontent">
+           <Route path="/usercontent">
             <Usercontent/>
-          </Route> */}
+           </Route> 
           <Route path="/">
             <Signin/>
           </Route>

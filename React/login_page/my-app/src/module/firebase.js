@@ -1,4 +1,4 @@
-import  {createBirthdayMsg} from "./user_content.js"
+import  {createBirthdayMsg} from "./usercontent.js"
 // TODO: refactor: move components to component folder
 import { useHistory } from 'react-router-dom';
 
@@ -23,7 +23,7 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const database = getDatabase(app);
 
-export function firebase_createUserContent() {
+function firebase_createUserContent() {
   let uid = localStorage.getItem("uid");
   get(child(ref(database), `users/` + uid)).then((snapshot) => {
     if (snapshot.exists()) {
@@ -70,23 +70,23 @@ let signup_success = await createUserWithEmailAndPassword(auth, email, pw)
   return signup_success
 }
 
-export async function Firebase_signin(user, pw)
-{
-  // const history=useHistory();
-  await signInWithEmailAndPassword(auth, user, pw)
-  .then((userCredential) => {
-      const user = userCredential.user;
-      //document.getElementById("Login-form").style.display = "none";
-      localStorage.setItem("uid", user.uid);
+// export async function Firebase_signin(user, pw)
+// {
+//    const history=useHistory();
+//   await signInWithEmailAndPassword(auth, user, pw)
+//   .then((userCredential) => {
+//       const user = userCredential.user;
+//       //document.getElementById("Login-form").style.display = "none";
+//       localStorage.setItem("uid", user.uid);
       
-      firebase_createUserContent()
-      // history.push('/usercontent')
-  })
-  .catch((error) => {
-      const errorMessage = error.message;
-      alert(errorMessage)
-  });
-}
+//       firebase_createUserContent()
+//        history.push('/usercontent')
+//   })
+//   .catch((error) => {
+//       const errorMessage = error.message;
+//       alert(errorMessage)
+//   });
+// }
 
-export{getAuth , getDatabase, ref, set, child, get}
+export{auth , signInWithEmailAndPassword,getDatabase, ref, set, child, get,firebase_createUserContent}
 
