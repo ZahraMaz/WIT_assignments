@@ -1,7 +1,4 @@
-import  {createBirthdayMsg} from "./usercontent.js"
-// TODO: refactor: move components to component folder
-import { useHistory } from 'react-router-dom';
-
+import  {createBirthdayMsg} from "../components/usercontent.js"
 import { initializeApp } from "firebase/app";
 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "firebase/auth";
 import { getDatabase, ref, set, child, get } from "firebase/database";

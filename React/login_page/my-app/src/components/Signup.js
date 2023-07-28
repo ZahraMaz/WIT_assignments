@@ -3,7 +3,7 @@ import { useState } from 'react'
 import './Signup.css'
 import {Link} from "react-router-dom"
 import { useHistory } from 'react-router-dom';
-import { firebase_signup } from './firebase';
+import { firebase_signup } from '../module/firebase';
 
 function Signup(){
     const [email,setEmail]=useState('')

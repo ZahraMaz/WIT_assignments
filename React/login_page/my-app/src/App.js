@@ -1,7 +1,7 @@
 import './App.css';
-import Signup from './module/Signup';
-import Signin from './module/Signin';
-import Usercontent from './module/usercontent';
+import Signup from './components/Signup';
+import Signin from './components/Signin';
+import Usercontent from './components/usercontent';
 import {BrowserRouter as Router , Route , Switch} from "react-router-dom"
 
 function App() {
