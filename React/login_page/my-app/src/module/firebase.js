@@ -6,7 +6,6 @@ import { initializeApp } from "firebase/app";
 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "firebase/auth";
 import { getDatabase, ref, set, child, get } from "firebase/database";
 
-
 const firebaseConfig = {
   apiKey: "AIzaSyCtAAhtkFXZald-dzLC8HSEzzTG1Ic0eO0",
   authDomain: "login-page-bd735.firebaseapp.com",
@@ -49,6 +48,7 @@ function firebase_writeUserData(uid, email, name, dob) {
     DOB : dob
   });
 }
+
 export async function firebase_signup(email, pw, name, dob)
 {
 let signup_success = await createUserWithEmailAndPassword(auth, email, pw)
@@ -65,28 +65,10 @@ let signup_success = await createUserWithEmailAndPassword(auth, email, pw)
 
   if (signup_success)
   {
-    alert('Sign up successful, Please use your credentials to login.')
+    alert('Sign up successful.')
   }
   return signup_success
 }
-
-// export async function Firebase_signin(user, pw)
-// {
-//    const history=useHistory();
-//   await signInWithEmailAndPassword(auth, user, pw)
-//   .then((userCredential) => {
-//       const user = userCredential.user;
-//       //document.getElementById("Login-form").style.display = "none";
-//       localStorage.setItem("uid", user.uid);
-      
-//       firebase_createUserContent()
-//        history.push('/usercontent')
-//   })
-//   .catch((error) => {
-//       const errorMessage = error.message;
-//       alert(errorMessage)
-//   });
-// }
 
 export{auth , signInWithEmailAndPassword,getDatabase, ref, set, child, get,firebase_createUserContent}
 

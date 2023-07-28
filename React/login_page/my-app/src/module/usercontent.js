@@ -1,12 +1,4 @@
-// import React from 'react';
 import { useHistory } from 'react-router-dom';
-
-// const loginForm=document.getElementById('Login-form');
-// if (loginForm!=null)
-// {
-// loginForm.addEventListener('submit', (e)=>{
-//     e.preventDefault();})     
-// }
 
 export function createBirthdayMsg(name, birthday)
 {
@@ -31,7 +23,7 @@ export function createBirthdayMsg(name, birthday)
                     {
                         msg = msg + "\"\n" + qt[idx].author
                     }
-                    // document.getElementById("bd-message").innerHTML = msg;
+                    document.getElementById("bd-message").innerHTML = msg;
                     // alert(msg)
                 });
         } 
@@ -44,23 +36,17 @@ export function createBirthdayMsg(name, birthday)
             }
             var daysUntilBirthday = Math.ceil((nextBirthday - today) / (1000 * 60 * 60 * 24));
             msg = "Hi " + name + "! Your birthday is in " + daysUntilBirthday + " day(s).";
-            // document.getElementById("bd-message").innerHTML = birthdayCountdown;
-            
+            document.getElementById("bd-message").innerHTML = msg;
         }
-        
     }
 }
-
 
  const Usercontent=()=>{
     const history=useHistory();
     const signoutUser=(e)=>{
         e.preventDefault()
         history.push('/')
-
     }
-    
-
     return(
         <div id="form-container">
         <div id="form-header-container">
@@ -71,6 +57,5 @@ export function createBirthdayMsg(name, birthday)
         </div>
       </div>
     )
-
 }
 export default Usercontent;
