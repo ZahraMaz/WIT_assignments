@@ -24,7 +24,7 @@ export function createBirthdayMsg(name, birthday)
                         msg = msg + "\"\n" + qt[idx].author
                     }
                     document.getElementById("bd-message").innerHTML = msg;
-                    // alert(msg)
+                    
                 });
         } 
         else 
