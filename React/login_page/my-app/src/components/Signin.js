@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import {Link} from "react-router-dom";
 import { useHistory } from 'react-router-dom';
 import {auth,signInWithEmailAndPassword ,firebase_createUserContent} from '../module/firebase'
+import EmailInput from './EmailInput'
+import PasswordInput from './PasswordInput'
 
 const Signin=()=>{
   const [email,setEmail]=useState('')
@@ -10,6 +12,9 @@ const Signin=()=>{
   const emailChange=(e)=>{setEmail(e.target.value)}
   const passwordChange=(e)=>{setPassword(e.target.value)}
   const history=useHistory();
+  const getEmail=(email)=>{
+    setEmail(email)
+  }
 
   function signinUser(e){
     e.preventDefault()
@@ -32,14 +37,10 @@ const Signin=()=>{
           <h1 id="form-header">Sign In</h1>
         </div>
         <form id="Login-form">
-          <div className="input-field">
-            <label htmlFor="email">Email:</label>
-            <input type="email" id="email" required  onChange={emailChange}/><br />
-          </div>
-          <div className="input-field">
-            <label htmlFor="password">Password:</label>
-            <input type="password" id="password" required  onChange={passwordChange}/><br />
-          </div>
+         {/* <EmailInput onGetEmail={getEmail}/> */}
+         <h1>00000</h1>
+         <EmailInput />
+         {/* <PasswordInput onPasswordChange/> */}
           <div id="button_container">
             <button type="submit" id="signinbtn" onClick={signinUser}>Sign in</button>
           </div>
